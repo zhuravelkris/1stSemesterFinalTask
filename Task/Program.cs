@@ -5,18 +5,19 @@
 int length = 20;
 int[] Array = new int[length];
 
-int CreateArray(int length)  //заполняем массив случайными числами и возвращаем количество четных чисел 
+int CreateArray(int length) 
 {
     int count = 0;
     for (int i = 0; i < length; i++)
     {
         Array[i] = new Random().Next(-50, 51);
-        if (Array[i] % 2 == 0) count++;
+        if (Array[i] % 2 == 0) 
+        count++;
     }
     return count; 
 }
 
-int[] CreateEvenArray(int arg, int length)  //заполняем новый массив четными числами из предыдущего массива
+int[] CreateEvenArray(int arg, int length) 
 {
     int[] evenNumbersArray = new int[arg];
     for (int i = 0, j = 0; i < length; i++)
@@ -33,7 +34,7 @@ int[] CreateEvenArray(int arg, int length)  //заполняем новый ма
 int count = CreateArray(length);
 int[] evenNumbersArray = CreateEvenArray(count, length);
 
-Console.Clear();
+Console.Clear(); 
 Console.WriteLine(String.Join(' ', Array));   //вывод в консоль первоначального массива
 Console.WriteLine(String.Join(' ', evenNumbersArray)); //вывод в консоль массива, состоящего из четных чисел
 
